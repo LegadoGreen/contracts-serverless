@@ -1,0 +1,34 @@
+service: nftService
+
+useDotenv: true
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  timeout: 120
+
+functions:
+  deployContract:
+    handler: src/deployContract.handler
+    events:
+      - httpApi: POST /deployContract
+  basicMint:
+    handler: src/basicMint.handler
+    events:
+      - httpApi: POST /basicMint
+  batchMint:
+    handler: src/batchMint.handler
+    events:
+      - httpApi: POST /batchMint
+  changeUri:
+    handler: src/basicChangeUri.handler
+    events:
+      - httpApi: POST /basicChangeUri
+
+custom:
+  esbuild:
+    bundle: true
+    minify: true
+
+plugins:
+  - serverless-offline
