@@ -1,0 +1,27 @@
+{
+  "name": "contract-serverless",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "serverless offline",
+    "deploy": "serverless deploy"
+  },
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "description": "",
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.1.0",
+    "@types/aws-lambda": "^8.10.146",
+    "@types/busboy": "^1.5.4",
+    "busboy": "^1.6.0",
+    "erc721a": "^4.3.0",
+    "ethers": "^6.13.4",
+    "serverless": "^4.4.13",
+    "serverless-esbuild": "^1.54.6",
+    "serverless-offline": "^14.3.4",
+    "serverless-plugin-typescript": "^2.1.5",
+    "solc": "^0.8.28",
+    "typescript": "^5.7.2"
+  }
+}
