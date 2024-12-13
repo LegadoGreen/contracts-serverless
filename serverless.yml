@@ -24,7 +24,6 @@ functions:
     handler: src/basicChangeUri.handler
     events:
       - httpApi: POST /basicChangeUri
-  # Metadata
   createMetadataFiles:
     handler: src/createMetadataFiles.handler
     events:

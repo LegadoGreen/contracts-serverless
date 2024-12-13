@@ -5,7 +5,6 @@
     "dev": "serverless offline",
     "deploy": "serverless deploy"
   },
-  "type": "module",
   "author": "",
   "license": "ISC",
   "keywords": [],
