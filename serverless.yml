@@ -24,6 +24,19 @@ functions:
     handler: src/basicChangeUri.handler
     events:
       - httpApi: POST /basicChangeUri
+  # Metadata
+  createMetadataFiles:
+    handler: src/createMetadataFiles.handler
+    events:
+      - httpApi: POST /createMetadataFiles
+  editMetadataFiles:
+    handler: src/editMetadataFiles.handler
+    events:
+      - httpApi: POST /editMetadataFiles
+  convertMetadataFolderToIpfs:
+    handler: src/convertMetadataFolderToIpfs.handler
+    events:
+      - httpApi: POST /convertMetadataFolderToIpfs
 
 custom:
   esbuild:
