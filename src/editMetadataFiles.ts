@@ -8,7 +8,7 @@ import Busboy from "busboy";
 export const handler: any = async (event) => {
   try {
     const busboy = Busboy({ headers: event.headers });
-    const tempDir = path.resolve("temp_metadata");
+    const tempDir = path.resolve("/tmp/temp_metadata");
     const zipPath = path.resolve(tempDir, "uploaded.zip");
     let numberOfEdits = 1;
     let previousHash: any = 0;
@@ -100,7 +100,7 @@ export const handler: any = async (event) => {
     fs.rmSync(zipPath, { force: true });
 
     // Create a new zip archive
-    const newZipPath = path.resolve("modified_metadata.zip");
+    const newZipPath = path.resolve("/tmp/modified_metadata.zip");
     const output = fs.createWriteStream(newZipPath);
     const archive = archiver("zip", { zlib: { level: 9 } });
 

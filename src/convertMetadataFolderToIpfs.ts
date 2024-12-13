@@ -23,7 +23,7 @@ export const handler: APIGatewayProxyHandler = async (event) => {
 
     // Parse the multipart body using Busboy
     const busboy = Busboy({ headers: { "content-type": event.headers["content-type"] } });
-    const tmpDir = `./${uuidv4()}`;
+    const tmpDir = `/tmp/${uuidv4()}`;
     fs.mkdirSync(tmpDir);
     const zipFilePath = path.join(tmpDir, "uploaded.zip");
 
@@ -50,7 +50,12 @@ export const handler: APIGatewayProxyHandler = async (event) => {
     zip.extractAllTo(extractedPath, true);
 
     // Create CAR file
-    const pathToIpfsCar = './node_modules/.bin/ipfs-car';
+    const environment = process.env.NODE_ENV || 'production';
+    let pathToIpfsCar = './node_modules/.bin/ipfs-car';
+    if (environment === 'production'){
+      process.env.NPM_CONFIG_CACHE = '/tmp/.npm';
+      pathToIpfsCar = 'npx ipfs-car';
+    }
     const cidIpfs = execSync(`${pathToIpfsCar} pack ${extractedPath} --output ${tmpDir}/output.car`);
 
     // Upload CAR file to Filebase

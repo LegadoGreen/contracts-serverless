@@ -8,8 +8,8 @@ export const handler: any = async (event) => {
   try {
     // Parse input from the request body
     const body = JSON.parse(event.body || "{}");
-    const folderPath = path.resolve("metadata");
-    const zipPath = path.resolve("metadata.zip");
+    const folderPath = path.resolve("/tmp/.cache");
+    const zipPath = path.resolve("/tmp/.cache/metadata.zip");
     const fileNumber = parseInt(body.fileNumber, 10) || 10;
 
     // Ensure the folder exists
