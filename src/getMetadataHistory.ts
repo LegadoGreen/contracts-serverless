@@ -69,6 +69,10 @@ export const handler: APIGatewayProxyHandler = async (event) => {
 
     return {
       statusCode: 200,
+      headers: {
+        "Access-Control-Allow-Origin" : "*", // Required for CORS support to work
+        "Access-Control-Allow-Credentials" : true // Required for cookies, authorization headers with HTTPS
+      },
       body: JSON.stringify({
         message: "Metadata history retrieved successfully.",
         uriHistory,
@@ -77,6 +81,10 @@ export const handler: APIGatewayProxyHandler = async (event) => {
   } catch (error) {
     return {
       statusCode: 500,
+      headers: {
+        "Access-Control-Allow-Origin" : "*", // Required for CORS support to work
+        "Access-Control-Allow-Credentials" : true // Required for cookies, authorization headers with HTTPS
+      },
       body: JSON.stringify({ error: error.message }),
     };
   }

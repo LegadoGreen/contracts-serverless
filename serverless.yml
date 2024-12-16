@@ -40,6 +40,11 @@ functions:
     handler: src/getMetadataHistory.handler
     events:
       - httpApi: POST /getMetadataHistory
+        cors:
+          origin: '*'
+          headers:
+            - Content-Type
+            - X
 
 custom:
   esbuild:
