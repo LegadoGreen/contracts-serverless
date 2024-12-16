@@ -88,7 +88,7 @@ export const handler: any = async (event) => {
       data.attributes.legado_level = Math.floor(Math.random() * 100) + 1;
       data.attributes.carbon_offset = Math.floor(Math.random() * 100000) + 1;
       data.attributes.legado_user = Math.floor(Math.random() * 10000);
-      data.last_record_hash = previousHash;
+      data.last_record_hash = previousHash + data.id + '.json';
 
       fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
       modifiedFiles.push(filePath);

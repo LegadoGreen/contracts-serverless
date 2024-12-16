@@ -6,6 +6,7 @@ import AdmZip from "adm-zip";
 import Busboy from "busboy";
 import AWS from "aws-sdk";
 import { execSync } from "child_process";
+import 'dotenv/config';
 
 export const handler: APIGatewayProxyHandler = async (event) => {
   try {
