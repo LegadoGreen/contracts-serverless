@@ -6,18 +6,12 @@ export const handler: APIGatewayProxyHandler = async (event) => {
   try {
     const body = JSON.parse(event.body || "{}");
 
-    const { tokenId, privateKey, contractAddress } = body;
+    const { tokenId, contractAddress } = body;
 
     if (tokenId === undefined || tokenId === null) {
       return {
         statusCode: 400,
         body: JSON.stringify({ error: "Missing tokenId." }),
-      };
-    }
-    if (!privateKey) {
-      return {
-        statusCode: 400,
-        body: JSON.stringify({ error: "Missing private key." }),
       };
     }
     if (!contractAddress) {
@@ -27,18 +21,17 @@ export const handler: APIGatewayProxyHandler = async (event) => {
       };
     }
 
-    // Initialize provider and wallet
+    // Initialize provider
     const provider = new ethers.JsonRpcProvider(
       "https://rpc-amoy.polygon.technology"
     );
-    const wallet = new ethers.Wallet(privateKey, provider);
 
     // TokenURI contract details
     const contractABI = [
       "function tokenURI(uint256 tokenId) public view returns (string memory)",
     ];
 
-    const contract = new ethers.Contract(contractAddress, contractABI, wallet);
+    const contract = new ethers.Contract(contractAddress, contractABI, provider);
 
     // Metadata history array
     const uriHistory: string[] = [];
@@ -55,7 +48,6 @@ export const handler: APIGatewayProxyHandler = async (event) => {
 
     while (true) {
       // Fetch metadata from the URI
-      console.log(`Fetching metadata from ${tokenUriHttps}`);
       const metadataResponse = await axios.get(tokenUriHttps);
       const metadata = metadataResponse.data;
 
