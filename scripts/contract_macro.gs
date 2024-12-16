@@ -4,7 +4,7 @@ function sendPostRequest() {
 
   // Get the sheets
   const baseSheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(baseSheetName);
-  const outputSheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(outputSheetName) 
+  const outputSheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(outputSheetName)
                       || SpreadsheetApp.getActiveSpreadsheet().insertSheet(outputSheetName);
 
   if (!baseSheet) {
@@ -47,7 +47,7 @@ function sendPostRequest() {
     numberOfMints: numberOfMints,
   };
 
-  const url = "https://vod0znrzk1.execute-api.us-east-1.amazonaws.com/basicMint";
+  const url = "https://f48l3fwh28.execute-api.us-east-1.amazonaws.com/basicMint";
 
   try {
     // Make POST request
@@ -97,7 +97,7 @@ function sendBatchMintRequest721A() {
 
   // Get the sheets
   const baseSheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(baseSheetName);
-  const outputSheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(outputSheetName) 
+  const outputSheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(outputSheetName)
                       || SpreadsheetApp.getActiveSpreadsheet().insertSheet(outputSheetName);
 
   if (!baseSheet) {
@@ -144,7 +144,7 @@ function sendBatchMintRequest721A() {
     contractAddress: contractAddress,
   };
 
-  const url = "https://vod0znrzk1.execute-api.us-east-1.amazonaws.com/batchMint";
+  const url = "https://f48l3fwh28.execute-api.us-east-1.amazonaws.com/batchMint";
 
   try {
     // Make POST request
@@ -193,7 +193,7 @@ function sendBatchMintRequest1155() {
 
   // Get the sheets
   const baseSheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(baseSheetName);
-  const outputSheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(outputSheetName) 
+  const outputSheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(outputSheetName)
                       || SpreadsheetApp.getActiveSpreadsheet().insertSheet(outputSheetName);
 
   if (!baseSheet) {
@@ -240,7 +240,7 @@ function sendBatchMintRequest1155() {
     contractAddress: contractAddress,
   };
 
-  const url = "https://vod0znrzk1.execute-api.us-east-1.amazonaws.com/batchMint";
+  const url = "https://f48l3fwh28.execute-api.us-east-1.amazonaws.com/batchMint";
 
   try {
     // Make POST request
@@ -290,7 +290,7 @@ function sendChangeUriRequestERC721() {
 
   // Get the sheets
   const baseSheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(baseSheetName);
-  const outputSheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(outputSheetName) 
+  const outputSheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(outputSheetName)
                       || SpreadsheetApp.getActiveSpreadsheet().insertSheet(outputSheetName);
 
   if (!baseSheet) {
@@ -331,7 +331,7 @@ function sendChangeUriRequestERC721() {
     contractAddress: contractAddress,
   };
 
-  const url = "https://vod0znrzk1.execute-api.us-east-1.amazonaws.com/basicChangeUri";
+  const url = "https://f48l3fwh28.execute-api.us-east-1.amazonaws.com/basicChangeUri";
 
   try {
     // Make POST request
@@ -385,7 +385,7 @@ function sendChangeUriRequestERC1155() {
 
   // Get the sheets
   const baseSheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(baseSheetName);
-  const outputSheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(outputSheetName) 
+  const outputSheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(outputSheetName)
                       || SpreadsheetApp.getActiveSpreadsheet().insertSheet(outputSheetName);
 
   if (!baseSheet) {
@@ -427,7 +427,7 @@ function sendChangeUriRequestERC1155() {
     contractAddress: contractAddress,
   };
 
-  const url = "https://vod0znrzk1.execute-api.us-east-1.amazonaws.com/basicChangeUri";
+  const url = "https://f48l3fwh28.execute-api.us-east-1.amazonaws.com/basicChangeUri";
 
   try {
     // Make POST request
