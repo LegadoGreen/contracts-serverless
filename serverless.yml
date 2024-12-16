@@ -36,6 +36,10 @@ functions:
     handler: src/convertMetadataFolderToIpfs.handler
     events:
       - httpApi: POST /convertMetadataFolderToIpfs
+  getMetadataHistory:
+    handler: src/getMetadataHistory.handler
+    events:
+      - httpApi: POST /getMetadataHistory
 
 custom:
   esbuild:
